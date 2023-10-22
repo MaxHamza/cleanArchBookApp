@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/clean_arch_bookly_app.iml" filepath="$PROJECT_DIR$/clean_arch_bookly_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clean_arch_bookly_app-09a30c52ab53e745ff8874947dfeea1550ce4efd/clean_arch_bookly_app-09a30c52ab53e745ff8874947dfeea1550ce4efd.iml" filepath="$PROJECT_DIR$/clean_arch_bookly_app-09a30c52ab53e745ff8874947dfeea1550ce4efd/clean_arch_bookly_app-09a30c52ab53e745ff8874947dfeea1550ce4efd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clean_arch_bookly_app-09a30c52ab53e745ff8874947dfeea1550ce4efd/android/app/src/debug/debug.iml" filepath="$PROJECT_DIR$/clean_arch_bookly_app-09a30c52ab53e745ff8874947dfeea1550ce4efd/android/app/src/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clean_arch_bookly_app-09a30c52ab53e745ff8874947dfeea1550ce4efd/android/app/src/profile/profile.iml" filepath="$PROJECT_DIR$/clean_arch_bookly_app-09a30c52ab53e745ff8874947dfeea1550ce4efd/android/app/src/profile/profile.iml" />
+    </modules>
+  </component>
+</project>
