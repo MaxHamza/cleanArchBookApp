@@ -1,7 +1,6 @@
 import 'package:bookly/Features/home/data/models/Book_model.dart';
 import 'package:bookly/Features/home/domain/entities/home_entity.dart';
 import 'package:bookly/core/utils/api_service.dart';
-import 'package:dio/dio.dart';
 
 abstract class RemoteHomeRepoDataSource{
   Future<List<BookEntity>>fetchFeaturedBooks();
