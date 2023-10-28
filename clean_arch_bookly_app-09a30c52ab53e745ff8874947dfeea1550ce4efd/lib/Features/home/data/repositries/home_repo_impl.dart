@@ -2,7 +2,7 @@ import 'package:bookly/Features/home/domain/entities/home_entity.dart';
 import 'package:bookly/Features/home/domain/repositries/home_repo.dart';
 import 'package:bookly/core/utils/failure.dart';
 import 'package:dartz/dartz.dart';
-
+import 'package:dio/dio.dart';
 import '../data_sources/local_home_repo_data_source.dart';
 import '../data_sources/remote_home_repo_data_source.dart';
 
@@ -22,7 +22,10 @@ class HomeRepoImpl extends HomeRepo{
       return right(books);
     }
     catch(e){
-      return left(Failure());
+      if(e is DioException){
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
@@ -38,7 +41,10 @@ class HomeRepoImpl extends HomeRepo{
       return right(books);
     }
     catch(e){
-      return left(Failure());
+      if(e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
