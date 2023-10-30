@@ -7,8 +7,6 @@ import 'package:bookly/core/widgets/custom_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import 'books_action.dart';
 import 'books_details_sectioni.dart';
 import 'custom_book_details_app_bar.dart';
@@ -19,14 +17,14 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding:  EdgeInsets.symmetric(horizontal: 30),
             child: Column(
-              children: const [
+              children:  [
                 CustomBookDetailsAppBar(),
                 BookDetailsSection(),
                 Expanded(

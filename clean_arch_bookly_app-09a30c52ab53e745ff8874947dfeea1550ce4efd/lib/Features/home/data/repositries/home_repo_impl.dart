@@ -7,18 +7,18 @@ import '../data_sources/local_home_repo_data_source.dart';
 import '../data_sources/remote_home_repo_data_source.dart';
 
 class HomeRepoImpl extends HomeRepo{
-  final LocalHomeRepoDataSourceImp localHomeRepoDataSourceImp;
-  final RemoteHomeRepoDataSourceImp remoteHomeRepoDataSourceImp;
-  HomeRepoImpl({required this.localHomeRepoDataSourceImp,required this.remoteHomeRepoDataSourceImp});
+  final LocalHomeRepoDataSource localHomeRepoDataSource;
+  final RemoteHomeRepoDataSource remoteHomeRepoDataSource;
+  HomeRepoImpl({required this.localHomeRepoDataSource,required this.remoteHomeRepoDataSource});
   @override
   Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks() async{
     List<BookEntity>books;
     try{
-      books=localHomeRepoDataSourceImp.fetchFeaturedBooks();
+      books=await localHomeRepoDataSource.fetchFeaturedBooks();
       if(books.isNotEmpty){
         return right(books);
       }
-       books=await remoteHomeRepoDataSourceImp.fetchFeaturedBooks();
+       books=await remoteHomeRepoDataSource.fetchFeaturedBooks();
       return right(books);
     }
     catch(e){
@@ -33,11 +33,11 @@ class HomeRepoImpl extends HomeRepo{
   Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() async{
     List<BookEntity>books;
     try{
-     books=localHomeRepoDataSourceImp.fetchNewestBooks();
+     books=localHomeRepoDataSource.fetchNewestBooks();
       if(books.isNotEmpty){
         return right(books);
       }
-      books=await remoteHomeRepoDataSourceImp.fetchNewestBooks();
+      books=await remoteHomeRepoDataSource.fetchNewestBooks();
       return right(books);
     }
     catch(e){
