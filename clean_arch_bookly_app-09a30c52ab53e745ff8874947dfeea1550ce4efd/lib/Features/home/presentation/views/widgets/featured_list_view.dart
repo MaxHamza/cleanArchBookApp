@@ -5,20 +5,21 @@ class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key, required this.length, required this.books});
  final int length;
  final List<BookEntity>books;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-  height: MediaQuery.of(context).size.height * .3,
-  child: ListView.builder(
-   itemCount: length,
-  scrollDirection: Axis.horizontal,
-  itemBuilder: (context, index) {
-  return  Padding(
-  padding: EdgeInsets.symmetric(horizontal: 8),
-  child: CustomBookImage(image:books[index].image ),
-  );
-  }),
-  );
-  }
-  }
+    @override
+     Widget build(BuildContext context) {
+     return SizedBox(
+     height: MediaQuery.of(context).size.height * .3,
+     child: ListView.builder(
+     physics:const BouncingScrollPhysics(),
+     itemCount: length,
+     scrollDirection: Axis.horizontal,
+     itemBuilder: (context, index) {
+     return  Padding(
+     padding:const EdgeInsets.symmetric(horizontal: 8),
+     child: CustomBookImage(image:books[index].image ),
+    );
+   }),
+   );
+   }
+   }
 

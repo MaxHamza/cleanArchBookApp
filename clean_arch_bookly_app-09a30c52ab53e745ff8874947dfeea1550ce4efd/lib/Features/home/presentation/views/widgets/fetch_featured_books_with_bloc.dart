@@ -1,7 +1,6 @@
 import 'package:bookly/Features/home/presentation/manager/featured_books/featured_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'featured_list_view.dart';
 class FeaturedBooksListViewWithBloc extends StatelessWidget {
 const FeaturedBooksListViewWithBloc({super.key});
